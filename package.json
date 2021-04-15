@@ -1,10 +1,11 @@
 {
     "name": "iceboom",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "nestjs, swagger-axios-codegen adapter",
     "main": "./dist/index.js",
+    "types": "./src/index.ts",
     "scripts": {
-        "build": "tsc -p ./src",
+        "build": "tsc ./src/index.ts",
         "prestart": "npm run build",
         "precommit": "prettier --write --config .prettierrc ./src/*.ts",
         "start": "node ./dist/index",
