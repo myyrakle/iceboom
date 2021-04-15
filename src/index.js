@@ -50,7 +50,8 @@ function generateAxios(document, basePath) {
                     return [4 /*yield*/, dist_1.codegen({
                             methodNameMode: 'path',
                             source: documentObject,
-                            useHeaderParameters: true
+                            useHeaderParameters: true,
+                            outputDir: 'axios'
                         })];
                 case 1:
                     _a.sent();

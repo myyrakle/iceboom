@@ -8,6 +8,7 @@ export async function generateAxios(document: any, basePath: string) {
   await codegen({
     methodNameMode: 'path',
     source: documentObject,
-    useHeaderParameters: true
+    useHeaderParameters: true,
+    outputDir: 'axios'
   })
 }
