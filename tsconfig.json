@@ -1,0 +1,23 @@
+{
+    "compileOnSave": true,
+    "exclude": ["./dist", "./example", "./test"],
+    "include": ["./typings", "./src"],
+    "compilerOptions": {
+        "target": "ES2016" ,
+        "module": "commonjs" ,
+        "lib": [
+            "esnext"
+        ],
+        "declaration": true ,
+        "sourceMap": true ,
+        "outDir": "./dist" ,
+        "strict": true ,
+        "strictNullChecks": false,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        } ,
+        "esModuleInterop": true 
+    }
+}
