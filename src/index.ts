@@ -11,14 +11,10 @@ export interface generateParemeter {}
 export async function generateAxios(document: any, basePath: string) {
   const documentObject: any = cloneDeep(document)
   documentObject.basePath = basePath
-  const documentString: string = JSON.stringify(documentObject)
-  await writeFileAsync('swagger.json', documentString, {
-    encoding: 'utf8'
-  })
 
   await codegen({
     methodNameMode: 'path',
-    source: require('/swagger.json'),
+    source: documentObject,
     useHeaderParameters: true
   })
 }
