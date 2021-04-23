@@ -41,12 +41,19 @@ var dist_1 = require("@myyrakle/swagger-axios-codegen/dist");
 var lodash_1 = require("lodash");
 function generateAxios(document, basePath) {
     return __awaiter(this, void 0, void 0, function () {
-        var documentObject;
+        var documentObject, pathKey, _i, pathKey_1, key;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     documentObject = lodash_1.cloneDeep(document);
                     documentObject.basePath = basePath;
+                    documentObject.tags = [{ name: 'api', description: '' }];
+                    pathKey = Object.keys(documentObject.paths);
+                    for (_i = 0, pathKey_1 = pathKey; _i < pathKey_1.length; _i++) {
+                        key = pathKey_1[_i];
+                        documentObject.paths[key].tags = ['api'];
+                    }
+                    //console.log()
                     return [4 /*yield*/, dist_1.codegen({
                             methodNameMode: 'path',
                             source: documentObject,
@@ -54,6 +61,7 @@ function generateAxios(document, basePath) {
                             outputDir: 'axios'
                         })];
                 case 1:
+                    //console.log()
                     _a.sent();
                     return [2 /*return*/];
             }

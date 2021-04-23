@@ -1,6 +1,6 @@
 # iceboom
 
-![](https://img.shields.io/badge/language-Typescript-red) ![](https://img.shields.io/badge/version-0.4.1-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/iceboom/blob/master/LICENSE)
+![](https://img.shields.io/badge/language-Typescript-red) ![](https://img.shields.io/badge/version-0.5.0-brightgreen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/myyrakle/iceboom/blob/master/LICENSE)
 
 swagger를 통해 axios api 함수들을 자동 생성해주는 라이브러리입니다.
 
