@@ -1,6 +1,6 @@
 {
     "name": "iceboom",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "description": "nestjs, swagger-axios-codegen adapter",
     "main": "./src/index",
     "types": "./src/index",

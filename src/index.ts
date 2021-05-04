@@ -2,6 +2,8 @@ import { codegen } from '@myyrakle/swagger-axios-codegen/dist'
 import { cloneDeep } from 'lodash'
 
 export async function generateAxios(document: any, basePath: string) {
+  document = require('../test.json')
+
   const documentObject: any = cloneDeep(document)
   documentObject.basePath = basePath
 
@@ -25,3 +27,4 @@ export async function generateAxios(document: any, basePath: string) {
     outputDir: 'axios'
   })
 }
+generateAxios(null, 'localhost:3000')

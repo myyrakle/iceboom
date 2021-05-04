@@ -1,0 +1,848 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "테스트",
+    "description": "테스트용 문서입니다.",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CreateAdminDto": {
+        "type": "object",
+        "properties": {
+          "admin_uuid": {
+            "type": "string",
+            "example": "83e1ee4b-37d5-44f9-9856-27e080ae5bf4",
+            "description": "코그니토 아이디"
+          },
+          "email_addr": {
+            "type": "string",
+            "example": "admin@ruu.kr",
+            "description": "이메일"
+          },
+          "admin_nm": {
+            "type": "string",
+            "example": "홍관리",
+            "description": "관리자 이름"
+          }
+        },
+        "required": ["admin_uuid", "email_addr", "admin_nm"]
+      },
+      "Admin": {
+        "type": "object",
+        "properties": {
+          "admin_no": {
+            "type": "string",
+            "example": "20210331000005",
+            "description": "admin_no"
+          },
+          "admin_uuid": {
+            "type": "string",
+            "example": "83e1ee4b-37d5-44f9-9856-27e080ae5bf4",
+            "description": "admin_uuid"
+          },
+          "email_addr": {
+            "type": "string",
+            "example": "test@ruu.kr",
+            "description": "email_addr"
+          },
+          "admin_nm": {
+            "type": "string",
+            "example": "홍길동",
+            "description": "admin_nm"
+          },
+          "del_no": {
+            "type": "string",
+            "example": "0",
+            "description": "삭제시 admin_no 넣음"
+          }
+        },
+        "required": [
+          "admin_no",
+          "admin_uuid",
+          "email_addr",
+          "admin_nm",
+          "del_no"
+        ]
+      },
+      "ListResponeAdminDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "example": [],
+            "description": "해당 타입의 배열",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Admin" }
+          },
+          "total_count": {
+            "type": "number",
+            "example": 999,
+            "description": "해당 총 갯수"
+          },
+          "total_page": {
+            "type": "number",
+            "example": 99,
+            "description": "해당 총 페이지수"
+          },
+          "current_page": {
+            "type": "number",
+            "example": 9,
+            "description": "현재 페이지"
+          },
+          "next_token": {
+            "type": "string",
+            "example": "asdasdasdsad=",
+            "description": "다음페이지 필요시 넣을것 \"\" 일경우 다음페이지 없음"
+          },
+          "limit": {
+            "type": "number",
+            "example": 10,
+            "description": "현제 limit"
+          }
+        },
+        "required": [
+          "items",
+          "total_count",
+          "total_page",
+          "current_page",
+          "next_token",
+          "limit"
+        ]
+      },
+      "CreateCustDto": {
+        "type": "object",
+        "properties": {
+          "cust_uuid": {
+            "type": "string",
+            "example": "83e1ee4b-37d5-44f9-9856-27e080ae5bf4",
+            "description": "코그니토 아이디"
+          },
+          "email_addr": {
+            "type": "string",
+            "example": "admin@ruu.kr",
+            "description": "이메일"
+          },
+          "cust_nm": {
+            "type": "string",
+            "example": "홍관리",
+            "description": "관리자 이름"
+          },
+          "cust_id": {
+            "type": "string",
+            "example": "testid",
+            "description": "아이디"
+          },
+          "moblphon_no": {
+            "type": "string",
+            "example": "821011112222",
+            "description": "moblphon_no"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "19990101",
+            "description": "birthday"
+          },
+          "sex_cd": {
+            "type": "string",
+            "example": "S00001",
+            "description": "S00001 / S00002"
+          },
+          "join_course_se_cd": {
+            "type": "string",
+            "example": "JCS001",
+            "description": "JCS001 구글 / JCS002 애플 / JCS003 카카오\u001d  / JCS004 페이스북 "
+          }
+        },
+        "required": [
+          "cust_uuid",
+          "email_addr",
+          "cust_nm",
+          "cust_id",
+          "moblphon_no",
+          "birthday",
+          "sex_cd",
+          "join_course_se_cd"
+        ]
+      },
+      "Cust": {
+        "type": "object",
+        "properties": {
+          "cust_no": {
+            "type": "string",
+            "example": "20210331000005",
+            "description": "cust_no"
+          },
+          "cust_uuid": {
+            "type": "string",
+            "example": "83e1ee4b-37d5-44f9-9856-27e080ae5bf4",
+            "description": "cust_uuid"
+          },
+          "cust_id": {
+            "type": "string",
+            "example": "testid",
+            "description": "cust_id"
+          },
+          "email_addr": {
+            "type": "string",
+            "example": "test@ruu.kr",
+            "description": "email_addr"
+          },
+          "cust_nm": {
+            "type": "string",
+            "example": "홍길동",
+            "description": "admin_nm"
+          },
+          "moblphon_no": {
+            "type": "string",
+            "example": "821011112222",
+            "description": "moblphon_no"
+          },
+          "birthday": {
+            "type": "string",
+            "example": "19990101",
+            "description": "birthday"
+          },
+          "sex_cd": {
+            "type": "string",
+            "example": "S00001",
+            "description": "S00001 / S00002"
+          },
+          "join_course_se_cd": {
+            "type": "string",
+            "example": " ",
+            "description": "join_course_se_cd"
+          },
+          "del_no": {
+            "type": "string",
+            "example": "0",
+            "description": "삭제시 cust_no 넣음"
+          },
+          "cust_images": {
+            "example": [],
+            "description": "cust_images[]",
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": [
+          "cust_no",
+          "cust_uuid",
+          "cust_id",
+          "email_addr",
+          "cust_nm",
+          "moblphon_no",
+          "birthday",
+          "sex_cd",
+          "join_course_se_cd",
+          "del_no",
+          "cust_images"
+        ]
+      },
+      "ListResponeCustDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "example": [],
+            "description": "해당 타입의 배열",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Cust" }
+          },
+          "total_count": {
+            "type": "number",
+            "example": 999,
+            "description": "해당 총 갯수"
+          },
+          "total_page": {
+            "type": "number",
+            "example": 99,
+            "description": "해당 총 페이지수"
+          },
+          "current_page": {
+            "type": "number",
+            "example": 9,
+            "description": "현재 페이지"
+          },
+          "next_token": {
+            "type": "string",
+            "example": "asdasdasdsad=",
+            "description": "다음페이지 필요시 넣을것 \"\" 일경우 다음페이지 없음"
+          },
+          "limit": {
+            "type": "number",
+            "example": 10,
+            "description": "현제 limit"
+          }
+        },
+        "required": [
+          "items",
+          "total_count",
+          "total_page",
+          "current_page",
+          "next_token",
+          "limit"
+        ]
+      },
+      "UpdateCustImageDto": {
+        "type": "object",
+        "properties": {
+          "img_url_addr": {
+            "type": "string",
+            "example": "/public/car/image-07ea8ad9-6e4b-4852-8e04-0fb4a325c4aa.jpg",
+            "description": "\n        이미지 url s3업로드후 나오는 경로 uuid로 만든다. \n        public\n        "
+          }
+        },
+        "required": ["img_url_addr"]
+      },
+      "CustImage": {
+        "type": "object",
+        "properties": {
+          "cust_no": {
+            "type": "string",
+            "example": "20210331000005",
+            "description": "cust_no"
+          },
+          "img_sn": {
+            "type": "string",
+            "example": "20210331000005",
+            "description": "이미지 순번"
+          },
+          "img_url_addr": {
+            "type": "string",
+            "example": "20210331000005",
+            "description": "이미지 url"
+          },
+          "img_full_url_addr": {
+            "type": "object",
+            "example": "/public/car/image-07ea8ad9-6e4b-4852-8e04-0fb4a325c4aa.jpg",
+            "description": "s3 풀 경로  http:[s3 url or cdn]/car/image-07ea8ad9-6e4b-4852-8e04-0fb4a325c4aa.jpg"
+          }
+        },
+        "required": ["cust_no", "img_sn", "img_url_addr", "img_full_url_addr"]
+      },
+      "CreateProductDto": { "type": "object", "properties": {} },
+      "UpdateProductDto": { "type": "object", "properties": {} },
+      "Code": {
+        "type": "object",
+        "properties": {
+          "cd_typ_no": {
+            "type": "string",
+            "example": "CT00000014",
+            "description": "code의 type 기본키"
+          },
+          "cd_no": {
+            "type": "string",
+            "example": "DS0003",
+            "description": "코드 아이디"
+          },
+          "cd_nm": {
+            "type": "string",
+            "example": "NSW정부승객서비스부담금",
+            "description": "code 이름"
+          },
+          "cd_typ_eng_nm": {
+            "type": "string",
+            "example": "DEDUCT_SE_CD",
+            "description": "code 이름"
+          }
+        },
+        "required": ["cd_typ_no", "cd_no", "cd_nm", "cd_typ_eng_nm"]
+      },
+      "ListResponeCodeDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "example": [],
+            "description": "해당 타입의 배열",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Code" }
+          },
+          "total_count": {
+            "type": "number",
+            "example": 999,
+            "description": "해당 총 갯수"
+          },
+          "total_page": {
+            "type": "number",
+            "example": 99,
+            "description": "해당 총 페이지수"
+          },
+          "current_page": {
+            "type": "number",
+            "example": 9,
+            "description": "현재 페이지"
+          },
+          "next_token": {
+            "type": "string",
+            "example": "asdasdasdsad=",
+            "description": "다음페이지 필요시 넣을것 \"\" 일경우 다음페이지 없음"
+          },
+          "limit": {
+            "type": "number",
+            "example": 10,
+            "description": "현제 limit"
+          }
+        },
+        "required": [
+          "items",
+          "total_count",
+          "total_page",
+          "current_page",
+          "next_token",
+          "limit"
+        ]
+      },
+      "CodeType": {
+        "type": "object",
+        "properties": {
+          "cd_typ_no": {
+            "type": "string",
+            "example": "CT00000001",
+            "description": "code type의 기본키"
+          },
+          "cd_typ_nm": {
+            "type": "string",
+            "example": "할인구분코드",
+            "description": "code type 설명"
+          },
+          "cd_typ_eng_nm": {
+            "type": "string",
+            "example": "DISCOUNT_SE_CD",
+            "description": "code type 설명"
+          }
+        },
+        "required": ["cd_typ_no", "cd_typ_nm", "cd_typ_eng_nm"]
+      },
+      "ListResponeCodeTypeDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "example": [],
+            "description": "해당 타입의 배열",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CodeType" }
+          },
+          "total_count": {
+            "type": "number",
+            "example": 999,
+            "description": "해당 총 갯수"
+          },
+          "total_page": {
+            "type": "number",
+            "example": 99,
+            "description": "해당 총 페이지수"
+          },
+          "current_page": {
+            "type": "number",
+            "example": 9,
+            "description": "현재 페이지"
+          },
+          "next_token": {
+            "type": "string",
+            "example": "asdasdasdsad=",
+            "description": "다음페이지 필요시 넣을것 \"\" 일경우 다음페이지 없음"
+          },
+          "limit": {
+            "type": "number",
+            "example": 10,
+            "description": "현제 limit"
+          }
+        },
+        "required": [
+          "items",
+          "total_count",
+          "total_page",
+          "current_page",
+          "next_token",
+          "limit"
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/cognitos/presignup-signup": {
+      "post": {
+        "operationId": "CognitosController_PreSignUpSignUp",
+        "summary": "코그니토 관련",
+        "description": " ",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      }
+    },
+    "/cognitos/custommessage-signup": {
+      "post": {
+        "operationId": "CognitosController_CustomMessageSignUp",
+        "summary": "코그니토 관련",
+        "description": " ",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      }
+    },
+    "/cognitos/postconfirmation-confirmForgotPassword": {
+      "post": {
+        "operationId": "CognitosController_PostConfirmationConfirmForgotPassword",
+        "summary": "코그니토 관련",
+        "description": " ",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      }
+    },
+    "/cognitos/postconfirmation-confirmsignup": {
+      "post": {
+        "operationId": "CognitosController_PostConfirmationConfirmSignUp",
+        "summary": "코그니토 관련",
+        "description": " ",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      }
+    },
+    "/admins": {
+      "post": {
+        "operationId": "AdminsController_create",
+        "summary": "코그니토 관련 comm 파라미터 참고",
+        "description": "",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateAdminDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      },
+      "get": {
+        "operationId": "AdminsController_findAll",
+        "summary": "관리자 리스트 가져오기",
+        "description": "",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "required": false,
+            "in": "query",
+            "example": "{\"admin_no\":\"DESC\"}",
+            "description": "\n\n    {\"admin_no\":\"DESC\"} 작성일 순 \n\n    \n\n    ",
+            "schema": { "type": "jsonStirng" }
+          },
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "\n\n    \n\n    ",
+            "schema": { "type": "jsonStirng" }
+          },
+          {
+            "name": "next_token",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "asdasqweqweqweqw=",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "",
+            "schema": {}
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "examples": { "10": { "value": 10, "description": "default" } },
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ListResponeAdminDto" }
+              }
+            }
+          }
+        },
+        "tags": ["[CMS][CMS] 관리자 관련"]
+      }
+    },
+    "/admins/my-info": {
+      "get": {
+        "operationId": "AdminsController_findOneToUuid",
+        "summary": "자기 정보 가져오기",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Admin" }
+              }
+            }
+          },
+          "403": { "description": "Forbidden." }
+        },
+        "tags": ["[CMS][API] 관리자 관련"]
+      }
+    },
+    "/custs": {
+      "post": {
+        "operationId": "CustsController_create",
+        "summary": "코그니토 관련 comm 파라미터 참고",
+        "description": "",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateCustDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["[COGNITO] cognito 관련"]
+      },
+      "get": {
+        "operationId": "CustsController_findAll",
+        "summary": "고객 리스트 가져오기",
+        "description": "",
+        "parameters": [
+          {
+            "name": "orderBy",
+            "required": false,
+            "in": "query",
+            "example": "{\"cust_no\":\"DESC\"}",
+            "description": "\n\n    {\"cust_no\":\"DESC\"} 작성일 순 \n\n    \n\n    ",
+            "schema": { "type": "jsonStirng" }
+          },
+          {
+            "name": "filter",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "\n\n    \n\n    ",
+            "schema": { "type": "jsonStirng" }
+          },
+          {
+            "name": "next_token",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "asdasqweqweqweqw=",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "example": "",
+            "description": "",
+            "schema": {}
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "examples": { "10": { "value": 10, "description": "default" } },
+            "schema": { "type": "number" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ListResponeCustDto" }
+              }
+            }
+          }
+        },
+        "tags": ["[CMS][CMS] 고객 관련"]
+      }
+    },
+    "/custs/my-info": {
+      "get": {
+        "operationId": "CustsController_findOneToUuid",
+        "summary": "자기 정보 가져오기",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Cust" }
+              }
+            }
+          },
+          "403": { "description": "Forbidden." }
+        },
+        "tags": ["[CUST][API] 고객 관련"]
+      }
+    },
+    "/cust-images/{img_sn}": {
+      "put": {
+        "operationId": "CustImagesController_update",
+        "summary": "고객 이미지 변경",
+        "description": "여러장도 가능하나 일단 한장만 되게 해둠",
+        "parameters": [
+          {
+            "name": "img_sn",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateCustImageDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CustImage" }
+              }
+            }
+          }
+        },
+        "tags": ["[CUST][API] 고객 관련"]
+      }
+    },
+    "/products": {
+      "post": {
+        "operationId": "ProductsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateProductDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["products"]
+      },
+      "get": {
+        "operationId": "ProductsController_findAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["products"]
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "operationId": "ProductsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["products"]
+      },
+      "put": {
+        "operationId": "ProductsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateProductDto" }
+            }
+          }
+        },
+        "responses": { "200": { "description": "" } },
+        "tags": ["products"]
+      },
+      "delete": {
+        "operationId": "ProductsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["products"]
+      }
+    },
+    "/codes/{cd_typ_no}": {
+      "get": {
+        "operationId": "CodesController_find",
+        "summary": "해당 코드 타입의 코드들 전부 가져오기",
+        "description": "필요한 cd_typ_no을  /codes/{cd_typ_no}에 넣어서 사용한다. ",
+        "parameters": [
+          {
+            "name": "cd_typ_no",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ListResponeCodeDto" }
+              }
+            }
+          }
+        },
+        "tags": ["[공통][CDN] 공통코드 codes"]
+      }
+    },
+    "/code-types": {
+      "get": {
+        "operationId": "CodeTypesController_findAll",
+        "summary": "코드 타입 전부 가져오기",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "성공",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListResponeCodeTypeDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["codes"]
+      }
+    }
+  }
+}

@@ -45,6 +45,7 @@ function generateAxios(document, basePath) {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
+                    document = require('../test.json');
                     documentObject = lodash_1.cloneDeep(document);
                     documentObject.basePath = basePath;
                     documentObject.tags = [{ name: 'api', description: '' }];
@@ -73,3 +74,4 @@ function generateAxios(document, basePath) {
     });
 }
 exports.generateAxios = generateAxios;
+generateAxios(null, 'localhost:3000');
