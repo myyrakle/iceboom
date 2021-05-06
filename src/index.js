@@ -39,7 +39,8 @@ exports.__esModule = true;
 exports.generateAxios = void 0;
 var dist_1 = require("@myyrakle/swagger-axios-codegen/dist");
 var lodash_1 = require("lodash");
-function generateAxios(document, basePath) {
+function generateAxios(document, basePath, outputDir) {
+    if (outputDir === void 0) { outputDir = '../axios'; }
     return __awaiter(this, void 0, void 0, function () {
         var documentObject, pathKey, _i, pathKey_1, key, methods, _a, methods_1, method;
         return __generator(this, function (_b) {
@@ -63,7 +64,7 @@ function generateAxios(document, basePath) {
                             methodNameMode: 'path',
                             source: documentObject,
                             useHeaderParameters: true,
-                            outputDir: 'axios'
+                            outputDir: outputDir
                         })];
                 case 1:
                     //console.log()
@@ -74,4 +75,4 @@ function generateAxios(document, basePath) {
     });
 }
 exports.generateAxios = generateAxios;
-generateAxios(null, 'localhost:3000');
+generateAxios(null, 'localhost:3000', '../foo/axios');

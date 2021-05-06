@@ -1,6 +1,6 @@
 {
     "name": "iceboom",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "description": "nestjs, swagger-axios-codegen adapter",
     "main": "./src/index",
     "types": "./src/index",
@@ -23,7 +23,7 @@
     },
     "homepage": "https://github.com/myyrakle/iceboom#readme",
     "dependencies": {
-        "@myyrakle/swagger-axios-codegen": "^0.12.0",
+        "@myyrakle/swagger-axios-codegen": "^0.14.0",
         "@types/lodash": "^4.14.168",
         "lodash": "^4.17.21"
     },
